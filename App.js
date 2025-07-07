@@ -8,7 +8,6 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HoroscopeScreen from './pages/HoroscopeScreen';
 import MatchesScreen from './pages/MatchesScreen';
 import AdUploadScreen from './pages/AdUploadScreen';
-import MatchesScreen from './pages/MatchesScreen';
 
 const Stack = createNativeStackNavigator();
 
