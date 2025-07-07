@@ -1,28 +1,34 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+// App.js
 
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-function App() {
-  const isDarkMode = useColorScheme() === 'dark';
+// Importing all main page screens
+import HoroscopeScreen from './pages/HoroscopeScreen';
+import MatchesScreen from './pages/MatchesScreen';
+import AdUploadScreen from './pages/AdUploadScreen';
+import MatchesScreen from './pages/MatchesScreen';
 
+const Stack = createNativeStackNavigator();
+
+export default function App() {
   return (
-    <View style={styles.container}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <NewAppScreen templateFileName="App.tsx" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Horoscope">
+        <Stack.Screen
+          name="Horoscope"
+          component={HoroscopeScreen}
+        />
+        <Stack.Screen
+          name="Matches"
+          component={MatchesScreen}
+        />
+        <Stack.Screen
+          name="Advertisement"
+          component={AdUploadScreen}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
-
-export default App;
