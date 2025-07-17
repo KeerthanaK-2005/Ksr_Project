@@ -13,8 +13,8 @@ import Icon from 'react-native-vector-icons/Feather';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import FiltersModal from '../components/FiltersModal';
-import ProfileCard from '../components/ProfileCard';
-import SwipeHint from '../components/SwipeHint';
+import ProfileCard from '../assets/ProfileCard';
+import SwipeHint from '../assets/SwipeHint';
 
 const { width } = Dimensions.get('window');
 const CARD_WIDTH = width * 0.92;

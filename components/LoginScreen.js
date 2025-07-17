@@ -1,138 +1,87 @@
+// src/screens/LoginScreen.js
 import React, { useState } from 'react';
 import {
   View,
   Text,
   TextInput,
   TouchableOpacity,
-  StyleSheet,
   Alert,
+  StyleSheet,
+  SafeAreaView,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const LoginScreen = ({ onLoginSuccess }) => {
+export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [hidePassword, setHidePassword] = useState(true);
 
-const handleLogin = async () => {
-  if (!email || !password) {
-    Alert.alert('Error', 'Please enter both email and password');
-    return;
-  }
-
-  try {
-    const response = await fetch('http://10.0.2.2:3001/auth/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ email, password }),
-    });
-
-    const data = await response.json();
-
-    console.log('📥 Login response:', data); // ✅ log backend response
-
-    if (response.ok) {
-      await AsyncStorage.setItem('accessToken', data.accessToken);
-      await AsyncStorage.setItem('refreshToken', data.refreshToken);
-      await AsyncStorage.setItem('userId', data.userId.toString());
-
-      console.log('✅ Stored access token:', data.accessToken); // ✅ check stored value
-      onLoginSuccess(data);
-    } else {
-      console.warn('❌ Login failed:', data.error);
-      Alert.alert('Login Failed', data.error || 'Invalid credentials');
+  const handleLogin = async () => {
+    if (!email || !password) {
+      Alert.alert('Missing Info', 'Please enter both email and password');
+      return;
     }
-  } catch (error) {
-    console.error('🚨 Login error:', error);
-    Alert.alert('Error', 'Something went wrong. Please try again.');
-  }
-};
 
+    try {
+      const res = await fetch('http://10.0.2.2:3001/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await res.json();
+
+      if (data.accessToken) {
+        await AsyncStorage.setItem('token', data.accessToken);
+        navigation.replace('Horoscope'); // move to Horoscope screen
+      } else {
+        Alert.alert('Login failed', data.message || 'No access token received.');
+      }
+    } catch (err) {
+      console.error('Login failed:', err);
+      Alert.alert('Login Error', 'Unable to connect to server.');
+    }
+  };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Matrimony Login</Text>
-
+    <SafeAreaView style={styles.container}>
+      <Text style={styles.heading}>Login</Text>
       <TextInput
-        style={styles.input}
         placeholder="Email"
-        placeholderTextColor="#999"
-        keyboardType="email-address"
         value={email}
         onChangeText={setEmail}
+        style={styles.input}
+        autoCapitalize="none"
+        keyboardType="email-address"
       />
-
-      <View style={styles.passwordContainer}>
-        <TextInput
-          style={styles.inputPassword}
-          placeholder="Password"
-          placeholderTextColor="#999"
-          secureTextEntry={hidePassword}
-          value={password}
-          onChangeText={setPassword}
-        />
-        <TouchableOpacity onPress={() => setHidePassword(!hidePassword)}>
-          <Icon name={hidePassword ? 'eye-off' : 'eye'} size={22} color="#999" />
-        </TouchableOpacity>
-      </View>
-
-      <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
-        <Text style={styles.loginText}>Login</Text>
+      <TextInput
+        placeholder="Password"
+        value={password}
+        onChangeText={setPassword}
+        style={styles.input}
+        secureTextEntry
+      />
+      <TouchableOpacity style={styles.button} onPress={handleLogin}>
+        <Text style={styles.buttonText}>Login</Text>
       </TouchableOpacity>
-    </View>
+    </SafeAreaView>
   );
-};
+}
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    paddingHorizontal: 30,
-  },
-  title: {
-    fontSize: 26,
-    fontWeight: 'bold',
-    marginBottom: 30,
-    textAlign: 'center',
-    color: '#FF6B6B',
-  },
+  container: { flex: 1, padding: 20, backgroundColor: '#fff', justifyContent: 'center' },
+  heading: { fontSize: 24, fontWeight: 'bold', marginBottom: 20, textAlign: 'center' },
   input: {
-    height: 50,
-    borderColor: '#ccc',
     borderWidth: 1,
-    borderRadius: 12,
-    paddingHorizontal: 15,
-    marginBottom: 20,
-    color: '#000',
-  },
-  passwordContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
     borderColor: '#ccc',
-    borderWidth: 1,
-    borderRadius: 12,
-    paddingHorizontal: 15,
-    marginBottom: 20,
-    height: 50,
+    borderRadius: 8,
+    padding: 12,
+    marginBottom: 16,
   },
-  inputPassword: {
-    flex: 1,
-    color: '#000',
-  },
-  loginButton: {
+  button: {
     backgroundColor: '#FF6B6B',
-    paddingVertical: 14,
-    borderRadius: 12,
+    padding: 14,
+    borderRadius: 10,
     alignItems: 'center',
   },
-  loginText: {
-    color: '#fff',
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
+  buttonText: { color: '#fff', fontWeight: 'bold', fontSize: 16 },
 });
-
-export default LoginScreen;
