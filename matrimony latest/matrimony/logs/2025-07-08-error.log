@@ -1,0 +1,21 @@
+2025-07-08 11:10:20 [31merror[39m: Login attempt with invalid email: ilaya.k@gmail.coma
+2025-07-08 11:10:20 [31merror[39m: Error logging in with email: ilaya.k@gmail.coma, error: Invalid email / credentials
+Error: Invalid email / credentials
+    at Object.loginByEmail (C:\Users\ILAYARAJA\myapp2\myapp1\matrimony latest\matrimony\service\auth.service.js:40:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async loginByEmail (C:\Users\ILAYARAJA\myapp2\myapp1\matrimony latest\matrimony\controllers\auth.controller.js:68:11)
+2025-07-08 11:10:20 [31merror[39m: Error logging in: Logging in with Invalid credentials
+2025-07-08 11:10:27 [31merror[39m: Login attempt with invalid email: ilaya.k@gmail.coma
+2025-07-08 11:10:27 [31merror[39m: Error logging in with email: ilaya.k@gmail.coma, error: Invalid email / credentials
+Error: Invalid email / credentials
+    at Object.loginByEmail (C:\Users\ILAYARAJA\myapp2\myapp1\matrimony latest\matrimony\service\auth.service.js:40:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async loginByEmail (C:\Users\ILAYARAJA\myapp2\myapp1\matrimony latest\matrimony\controllers\auth.controller.js:68:11)
+2025-07-08 11:10:27 [31merror[39m: Error logging in: Logging in with Invalid credentials
+2025-07-08 14:08:31 [31merror[39m: Login attempt with invalid email: ilaya.k@gmail.coma
+2025-07-08 14:08:31 [31merror[39m: Error logging in with email: ilaya.k@gmail.coma, error: Invalid email / credentials
+Error: Invalid email / credentials
+    at Object.loginByEmail (C:\Users\ILAYARAJA\myapp2\myapp1\matrimony latest\matrimony\service\auth.service.js:40:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async loginByEmail (C:\Users\ILAYARAJA\myapp2\myapp1\matrimony latest\matrimony\controllers\auth.controller.js:68:11)
+2025-07-08 14:08:31 [31merror[39m: Error logging in: Logging in with Invalid credentials

@@ -1,0 +1,6 @@
+2025-07-07 10:20:23 [31merror[39m: Login attempt with invalid password for email: rajaraja@gmail.com
+2025-07-07 10:20:23 [31merror[39m: Error logging in with email: rajaraja@gmail.com, error: Invalid credentials
+Error: Invalid credentials
+    at Object.loginByEmail (C:\Users\ILAYARAJA\myapp2\myapp1\matrimony latest\matrimony\service\auth.service.js:46:13)
+    at async loginByEmail (C:\Users\ILAYARAJA\myapp2\myapp1\matrimony latest\matrimony\controllers\auth.controller.js:68:11)
+2025-07-07 10:20:23 [31merror[39m: Error logging in: Logging in with Invalid credentials

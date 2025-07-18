@@ -1,0 +1,75 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "logs\\.a0ca4b3e14c16dc695c2e09272c903f759bd02df-audit.json",
+    "files": [
+        {
+            "date": 1751556683145,
+            "name": "logs\\2025-07-03-rejections.log",
+            "hash": "e05f36dc7ac010a76145a0f36667c071fa06708233c06dbfbdf46cde20795989"
+        },
+        {
+            "date": 1751620573080,
+            "name": "logs\\2025-07-04-rejections.log",
+            "hash": "9d51b86702f39abefe7b7a7199e885e3e69e4ee54cd363e13eb25495f70c53a4"
+        },
+        {
+            "date": 1751810413572,
+            "name": "logs\\2025-07-06-rejections.log",
+            "hash": "65573caab49abc08c1627447c2214a9a33e7e996629951834887bc787d58245c"
+        },
+        {
+            "date": 1751860364400,
+            "name": "logs\\2025-07-07-rejections.log",
+            "hash": "85158f7b5fcc0b07b6f2d22a296e6df45a49b0f8547f96a8b36685f496e1be25"
+        },
+        {
+            "date": 1751946466378,
+            "name": "logs\\2025-07-08-rejections.log",
+            "hash": "0efa01bbb2097591d92514a35dcaccb533ea69fa0bcf00ad19b34c2c51c3e3d5"
+        },
+        {
+            "date": 1752038657165,
+            "name": "logs\\2025-07-09-rejections.log",
+            "hash": "4f66c61172df74de095e8de1afbab353a54dd4b4bc327ea22daf46d5fc57817a"
+        },
+        {
+            "date": 1752128496692,
+            "name": "logs\\2025-07-10-rejections.log",
+            "hash": "fb0b8c59cd6b8e24358b00dac7657bf533994773a3fa28b4f515fc8af7b0e136"
+        },
+        {
+            "date": 1752206467092,
+            "name": "logs\\2025-07-11-rejections.log",
+            "hash": "bc95b9e31cb4684ae7dc8baed98d541109c95a540fe1e53dba8cb24ed38ae0be"
+        },
+        {
+            "date": 1752378854383,
+            "name": "logs\\2025-07-13-rejections.log",
+            "hash": "4060c69a8a9ae8a6106e1d3f3649d4c4829ff764fba45ba92583943e6fc59c6d"
+        },
+        {
+            "date": 1752468513360,
+            "name": "logs\\2025-07-14-rejections.log",
+            "hash": "ed65f6ebbaf3d1fedd1b7f38ade2a67115c14421434ccc4d4cf00322a6e730d9"
+        },
+        {
+            "date": 1752562082051,
+            "name": "logs\\2025-07-15-rejections.log",
+            "hash": "3a2547b15f2bdd95046ceed68e0578eff623eff3bc2511b31b4ad982baee7f99"
+        },
+        {
+            "date": 1752640718159,
+            "name": "logs\\2025-07-16-rejections.log",
+            "hash": "8e469d009b8987a62c901a89537712a1490ee566576fb59c6544c340eca5fb96"
+        },
+        {
+            "date": 1752724728246,
+            "name": "logs\\2025-07-17-rejections.log",
+            "hash": "6ca8ae2c5299e832882ac152c3ae14a16a84eb1d4e981159d63cc464c86dff68"
+        }
+    ],
+    "hashType": "sha256"
+}
