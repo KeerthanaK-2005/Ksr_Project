@@ -12,7 +12,7 @@ import {
 import Icon from 'react-native-vector-icons/Feather';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-import FiltersModal from '../components/FiltersModal';
+import FiltersModal from '../components/FiltersModal1';
 import ProfileCard from '../assets/ProfileCard';
 import SwipeHint from '../assets/SwipeHint';
 

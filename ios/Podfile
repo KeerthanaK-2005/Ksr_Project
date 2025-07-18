@@ -14,7 +14,11 @@ if linkage != nil
   use_frameworks! :linkage => linkage.to_sym
 end
 
+<<<<<<< HEAD
 target 'VivaahConnectApp' do
+=======
+target 'MyApp' do
+>>>>>>> ad1445b1882928a86fd847927f2295944d4c43bd
   config = use_native_modules!
 
   use_react_native!(
