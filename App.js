@@ -2,7 +2,7 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import LoginScreen from './components/LoginScreen';
+import LoginScreen from './components/LoginScreenR';
 import HoroscopeScreen from './pages/HoroscopeScreen';
 import MatchesScreen from './pages/MatchesScreen1';
 import AdUploadScreen from './pages/AdUploadScreen';
