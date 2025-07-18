@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
 import MaterialIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import ImageCarousel from './ImageCarousel';
+import ImageCarousel from './ImageCarouselk';
 
 const { width } = Dimensions.get('window');
 const CARD_WIDTH = width * 0.92;
